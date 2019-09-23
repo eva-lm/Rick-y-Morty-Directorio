@@ -12,7 +12,10 @@ const CharacterList = props => {
         .map((character, index) => {
           return (
             <li className="character__item" key={index}>
-              <Link to="/character-detail" className="character__link">
+              <Link
+                to={`/character-detail/${character.id}`}
+                className="character__link"
+              >
                 <CharacterCard character={character} />
               </Link>
             </li>

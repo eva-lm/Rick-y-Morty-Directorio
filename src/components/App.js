@@ -33,6 +33,8 @@ class App extends React.Component {
     const { characters, search } = this.state;
     return (
       <div className="App">
+        <Header />
+
         <Switch>
           <Route
             exact
@@ -48,9 +50,18 @@ class App extends React.Component {
             }}
           />
 
-          <Route path="/character-detail" component={CharacterDetail} />
+          <Route
+            path="/character-detail/:characterId"
+            render={routerProps => {
+              return (
+                <CharacterDetail
+                  routerProps={routerProps}
+                  characters={characters}
+                />
+              );
+            }}
+          />
         </Switch>
-        <Header />
       </div>
     );
   }
