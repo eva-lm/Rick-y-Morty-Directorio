@@ -1,10 +1,18 @@
 import React from "react";
+import CharacterCard from "./CharacterCard";
 
-const CharacterList = () => {
+const CharacterList = props => {
+  const { characters } = props;
   return (
-    <header>
-      <h1> Liiissst</h1>
-    </header>
+    <ul className="character__list">
+      {characters.map((character, index) => {
+        return (
+          <li className="character__item" key={index}>
+            <CharacterCard character={character} />
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 

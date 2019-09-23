@@ -15,14 +15,12 @@ class App extends React.Component {
   }
   componentDidMount() {
     getDataFromServer().then(data => {
-      console.log(data);
       this.setState({
         characters: data.results
       });
     });
   }
   render() {
-    console.log(this.state);
     return (
       <div className="App">
         <Header />
