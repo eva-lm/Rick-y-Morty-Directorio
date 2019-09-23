@@ -33,13 +33,24 @@ class App extends React.Component {
     const { characters, search } = this.state;
     return (
       <div className="App">
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return (
+                <Home
+                  getCharacterFilter={this.getCharacterFilter}
+                  search={search}
+                  characters={characters}
+                />
+              );
+            }}
+          />
+
+          <Route path="/character-detail" component={CharacterDetail} />
+        </Switch>
         <Header />
-        <Home
-          getCharacterFilter={this.getCharacterFilter}
-          search={search}
-          characters={characters}
-        />
-        <CharacterDetail characters={characters} />
       </div>
     );
   }
