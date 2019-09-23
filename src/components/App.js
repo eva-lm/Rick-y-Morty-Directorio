@@ -1,9 +1,10 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import getDataFromServer from "../services/data";
-import "../stylesheets/App.css";
-import CharacterList from "./CharacterList";
 import Header from "./Header";
-import Filters from "./Filters";
+import Home from "./Home";
+import "../stylesheets/App.sass";
+import CharacterDetail from "./CharacterDetail";
 
 class App extends React.Component {
   constructor() {
@@ -24,23 +25,21 @@ class App extends React.Component {
   }
   getCharacterFilter(event) {
     const search = event.currentTarget.value;
-    console.log(search);
     this.setState({
       search: search
     });
   }
   render() {
+    const { characters, search } = this.state;
     return (
       <div className="App">
         <Header />
-        <Filters
+        <Home
           getCharacterFilter={this.getCharacterFilter}
-          search={this.state.search}
+          search={search}
+          characters={characters}
         />
-        <CharacterList
-          characters={this.state.characters}
-          search={this.state.search}
-        />
+        <CharacterDetail characters={characters} />
       </div>
     );
   }

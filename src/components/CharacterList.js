@@ -19,8 +19,9 @@ const CharacterList = props => {
   );
 };
 
-/* CharacterList.PropTypes = {
-  characters: PropTypes.arrayOf(PropTypes.object).isRequired
-}; */
+CharacterList.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired,
+  search: PropTypes.string.isRequired
+};
 
 export default CharacterList;

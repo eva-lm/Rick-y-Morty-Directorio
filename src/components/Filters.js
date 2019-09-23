@@ -11,4 +11,9 @@ const Filters = props => {
   );
 };
 
+Filters.propTypes = {
+  getCharacterFilter: PropTypes.func.isRequired,
+  search: PropTypes.string.isRequired
+};
+
 export default Filters;

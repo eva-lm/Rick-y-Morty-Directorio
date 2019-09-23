@@ -1,16 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const CharacterCard = props => {
-  console.log("props -->", props);
+  const { character } = props;
   return (
     <div>
       <div className="character__image-container">
-        <img src={props.character.image} alt={props.character.name} />
+        <img src={character.image} alt={character.name} />
       </div>
-      <h2 className="character__name">{props.character.name}</h2>
-      <p className="character__specie">{props.character.species}</p>
+      <h2 className="character__name">{character.name}</h2>
+      <p className="character__specie">{character.species}</p>
     </div>
   );
+};
+
+CharacterCard.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default CharacterCard;
