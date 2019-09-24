@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import "../stylesheets/CharacterDetail.scss";
 
 const CharacterDetail = props => {
   const { routerProps, characters } = props;
@@ -13,14 +14,14 @@ const CharacterDetail = props => {
       <Fragment>
         <div className="character__detail">
           <Link to="/" className="back">
-            <button>Volver al listado</button>
+            <button className="back__button"> Volver al listado </button>
           </Link>
           <div className="detail__card">
             <div className="detail__image-container">
               <img src={image} alt={name} />
             </div>
             <h2 className="detail__name">{name}</h2>
-            <ul>
+            <ul className="detail__list">
               <li className="detail__status">Status: {status}</li>
               <li className="detail__specie">Specie: {species}</li>
               <li className="detail__origin">Origen: {origin.name}</li>

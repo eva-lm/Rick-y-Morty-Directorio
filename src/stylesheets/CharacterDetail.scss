@@ -1,0 +1,43 @@
+.character__detail {
+  border: solid 2px rgb(0, 210, 225);
+  width: 80%;
+  padding: 20px;
+  margin: 20px;
+}
+.detail__image-container {
+  margin-left: 40px;
+}
+.back__button {
+  margin-left: 40px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: black;
+  border: solid 2px rgb(0, 210, 225);
+  margin-bottom: 10px;
+  &:hover {
+    background-color: rgb(0, 210, 225);
+    color: black;
+  }
+}
+.detail {
+  &__name {
+    color: white;
+    margin-left: 40px;
+  }
+  &__list {
+    list-style: none;
+  }
+  &__status {
+    color: white;
+  }
+  &__specie {
+    color: white;
+  }
+  &__origin {
+    color: white;
+  }
+  &__episode {
+    color: white;
+  }
+}
