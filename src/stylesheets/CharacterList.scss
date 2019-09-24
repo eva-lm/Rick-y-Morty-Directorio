@@ -1,0 +1,15 @@
+.character__list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 35px;
+}
+.character__item {
+  background-color: rgb(0, 210, 225);
+  margin: auto;
+}
+.character__link {
+  color: white;
+  text-align: start;
+  text-decoration: none;
+}

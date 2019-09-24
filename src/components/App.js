@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import getDataFromServer from "../services/data";
 import Header from "./Header";
 import Home from "./Home";
-import "../stylesheets/App.sass";
+import "../stylesheets/App.scss";
 import CharacterDetail from "./CharacterDetail";
 
 class App extends React.Component {

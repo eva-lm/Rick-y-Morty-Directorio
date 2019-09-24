@@ -8,19 +8,28 @@ const CharacterDetail = props => {
   const detail = characters.filter(item => item.id === characterId);
 
   if (detail[0]) {
-    const { name, image, status } = detail[0];
+    const { name, image, status, origin, episode, species } = detail[0];
     return (
       <Fragment>
         <div className="character__detail">
-          <h2 className="detail__name">{name}</h2>
-          <div className="detail__image-container">
-            <img src={image} alt={name} />
+          <Link to="/" className="back">
+            <button>Volver al listado</button>
+          </Link>
+          <div className="detail__card">
+            <div className="detail__image-container">
+              <img src={image} alt={name} />
+            </div>
+            <h2 className="detail__name">{name}</h2>
+            <ul>
+              <li className="detail__status">Status: {status}</li>
+              <li className="detail__specie">Specie: {species}</li>
+              <li className="detail__origin">Origen: {origin.name}</li>
+              <li className="detail__episode">
+                Número de episodios en los que sale: {episode.length}
+              </li>
+            </ul>
           </div>
-          <p className="detail__status">{status}</p>
         </div>
-        <Link to="/" className="back">
-          Volver al listado
-        </Link>
       </Fragment>
     );
   } else {

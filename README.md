@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Directorio de Rick y Morty.
 
-## Available Scripts
+Proyecto desarrollado en React que consiste en realizar una página web con un listado de personajes de Rick and Morty, donde podemos filtrar por el nombre del personaje.
 
-In the project directory, you can run:
 
-### `npm start`
+1. Listado de personajes
+En primer lugar, tenemos una web con el listado de personajes de Rick and Morty. Para eso, utilizamos el servicio de https://rickandmortyapi.com que nos devuelve información sobre los primeros 20 personajes de la serie.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Filtrado de personajes
+Ahora que ya tenemos el listado de personajes en pantalla, la segunda parte consiste en poder buscarlos por nombre. Para eso, tenemos un buscador en la parte superior de la Home. Este buscador tiene en cuenta si las letras están en mayúscula/minúscula para la búsqueda, y devuelve un mensaje de Not-Found si la búsqueda no da ningún resultado.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+3. Componentes del listado de personajes
+Esta app tiene esta estructura de componentes:
 
-### `npm test`
+-Home:
+  -Filters
+  -CharacterList
+    -CharacterCard
+-CharacterDetail
+-Header
+-Footer
+-Loading
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Detalle de personajes
+Al hacer clic sobre la tarjeta de un personaje, su información aparecerá a pantalla completa. Para hacer esto usamos rutas y React router. En la pantalla de detalle aparece además de la foto, nombre y especie, el planeta de origen, el número de episodios en los que aparece y si está vivo o muerto.
 
-### `npm run build`
+5. BONUS: Mejoras visuales
+Se muestra la especie y si un personajes está muerto con un icono
+Se usa un sistema de grid para pintar el listado de personaje que funciona responsive en dispositivos pequeños.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. BONUS: URL compartible
+La URL del detalle de personaje es compartible, es decir, que si visitamos esa URL directamente en el navegador se vea el detalle del personaje.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+7. BONUS: Loading and Not-Found Message
+Se han creado componentes para el cargado de los personajes y para cuando la busqueda no tiene resultados o el personaje que buscamos por url no se encuentra en nuestro directorio.

@@ -1,0 +1,16 @@
+.App {
+  @media all and (min-width: 300px) {
+    background-color: black;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+  }
+  @media all and (min-width: 768px) {
+    background-color: pink;
+    align-items: center;
+  }
+  @media all and (min-width: 768px) {
+  }
+}

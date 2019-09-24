@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../stylesheets/CharacterCard.scss";
 
 const CharacterCard = props => {
   const { character } = props;

@@ -1,13 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../stylesheets/Filters.scss";
 
 const Filters = props => {
   const { getCharacterFilter, search } = props;
   return (
-    <label>
-      Buscar
-      <input type="text" onChange={getCharacterFilter} value={search} />
-    </label>
+    <div className="filter__container">
+      <input
+        className="filter__name"
+        type="text"
+        onChange={getCharacterFilter}
+        value={search}
+      />
+    </div>
   );
 };
 

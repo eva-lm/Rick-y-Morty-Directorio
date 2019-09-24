@@ -1,0 +1,14 @@
+.filter__container {
+  display: flex;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.filter__name {
+  background-color: black;
+  border: solid 2px rgb(0, 210, 225);
+  width: 300px;
+  height: 30px;
+  color: white;
+  font-size: 18px;
+}
